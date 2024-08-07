@@ -1,0 +1,45 @@
+---
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  labels:
+    operators.openshift.org/catalog: "true"
+  name: operator-0
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/multicluster-engine
+    source: registry.redhat.io/multicluster-engine
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/openshift-logging
+    source: registry.redhat.io/openshift-logging
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/openshift4
+    source: registry.redhat.io/openshift4
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/odf4
+    source: registry.redhat.io/odf4
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/openshift-gitops-1
+    source: registry.redhat.io/openshift-gitops-1
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/rhel8
+    source: registry.redhat.io/rhel8
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/quay
+    source: registry.redhat.io/quay
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/rh-sso-7
+    source: registry.redhat.io/rh-sso-7
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/rhceph
+    source: registry.redhat.io/rhceph
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/rhel9
+    source: registry.redhat.io/rhel9
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/rhacm2
+    source: registry.redhat.io/rhacm2
+  - mirrors:
+    - quay-registry.abc.com:443/openshift/4.16/compliance
+    source: registry.redhat.io/compliance

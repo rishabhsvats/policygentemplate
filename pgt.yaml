@@ -1,0 +1,33 @@
+---
+apiVersion: ran.openshift.io/v1
+kind: PolicyGenTemplate
+metadata:
+  name: "common"
+  namespace: "workload"
+spec:
+  remediationAction: enforce
+  sourceFiles:
+    # Disconnected resources
+    - fileName: catalogsource/OperatorHub.yaml
+      policyName: config-policies
+      remediationAction: enforce
+
+    - fileName: catalogsource/quay-registry-secret.yaml
+      policyName: config-policies
+      remediationAction: enforce
+
+    - fileName: catalogsource/catalogSource-cs-redhat-operator-index.yaml
+      policyName: config-policies
+      remediationAction: enforce
+
+    - fileName: catalogsource/imageContentSourcePolicy.yaml
+      policyName: config-policies
+      remediationAction: enforce
+
+    # SRIOV Operator
+    - fileName: sriov/SriovSubscriptionNS.yaml
+      policyName: subscription-policies
+    - fileName: sriov/SriovSubscriptionOperGroup.yaml
+      policyName: subscription-policies
+    - fileName: sriov/SriovSubscription.yaml
+      policyName: subscription-policies
