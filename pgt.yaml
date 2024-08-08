@@ -5,6 +5,8 @@ metadata:
   name: "common"
   namespace: "workload"
 spec:
+  bindingRules:
+    name: managed
   remediationAction: enforce
   sourceFiles:
     # Disconnected resources
